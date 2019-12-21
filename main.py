@@ -70,6 +70,8 @@ if __name__ == '__main__':
 
     file = open("map_4_solution.csv", "w")
     good_road = []
+    good_road.append(end_position)
+    print(end_position)
     while True:
         step += 1
         for i in range(1, 5):
@@ -81,8 +83,9 @@ if __name__ == '__main__':
             point[1] += y
             if (point[0], point[1]) in all_positions_dict:
                 if all_positions_dict[point[0], point[1]] == end_value - step:
-                    point = [point[0],point[1]]
-                    good_road.append(point)
+                    help_var = [point[0],point[1]]
+                    good_road.append(help_var)
+                    print(good_road)
                     break
             if point == [start_position[0],start_position[1]]:
                 end_program = True
